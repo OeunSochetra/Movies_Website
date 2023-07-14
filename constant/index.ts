@@ -1,5 +1,4 @@
 
-
 export const thumbs = [
     {
         title: 'The Roundup: No Way Out',

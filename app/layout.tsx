@@ -1,7 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
-import Pagination from "@/components/Pagination";
+import Mypage from "@/components/Mypage";
+
 
 
 export const metadata = {
@@ -19,7 +20,9 @@ export default function RootLayout({
       <body>
         <Navbar></Navbar>
         <main>{children}</main>
-        <Pagination></Pagination>
+        <div className="pt-7">
+        <Mypage></Mypage>
+        </div>
         <Footer></Footer>
       </body>
     </html>
