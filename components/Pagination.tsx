@@ -1,5 +1,5 @@
-import React from 'react';
-import Container from './Container';
+import React from "react";
+import Container from "./Container";
 
 interface PaginationProps {
   currentPage: number;
@@ -7,7 +7,11 @@ interface PaginationProps {
   onPageChange: (page: number) => void;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
+const Pagination = ({
+  currentPage,
+  totalPages,
+  onPageChange,
+}: PaginationProps) => {
   const handlePageChange = (page: number) => {
     onPageChange(page);
   };
@@ -19,7 +23,9 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
           <button
             key={index}
             onClick={() => handlePageChange(index + 1)}
-            className={`px-2 py-1 mx-1 border-1 rounded-sm ${currentPage === index + 1 ? 'bg-red-600 text-white' : 'text-white'}`}
+            className={`px-2 py-1 mx-1 border-1 rounded-sm ${
+              currentPage === index + 1 ? "bg-red-600 text-white" : "text-white"
+            }`}
           >
             {index + 1}
           </button>

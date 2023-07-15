@@ -1,3 +1,4 @@
+import CustomButton from "@/components/CustomButton";
 import Input from "@/components/Input";
 
 const signup = () => {
@@ -14,6 +15,9 @@ const signup = () => {
           type="password"
           placeholder="Confirm Password"
         ></Input>
+      </div>
+      <div className="pt-8">
+        <CustomButton title={"Sign Up"} btnType={"button"}></CustomButton>
       </div>
     </div>
   );
