@@ -23,11 +23,14 @@ const Mypage: React.FC = () => {
 
   return (
     <Container>
-      <div className="pt-4 grid grid-cols-2 md:grid-cols-4 sm:grid-cols-4 xl:grid-cols-6 xxl:grid-cols-6 text-[#fff] gap-4 md:gap-4 sm:gap-2 xl:gap-3">
+      <div className="pt-4 grid grid-cols-2 md:grid-cols-4 sm:grid-cols-4 xl:grid-cols-6 
+      xxl:grid-cols-6 text-[#fff] gap-4 md:gap-4 sm:gap-2 xl:gap-3">
         {thumbs.slice(startIndex, endIndex).map((thumb: Thumb, index: number) => (
           <div key={index} className="flex flex-col items-center">
             <img
-              className="rounded-xl xl:w-[180px] ms:w-[170px] md:w-[170px] cursor-pointer bg-gray-300 bg-opacity-60 shadow-xl backdrop-blur-md text-center transition-all duration-500 hover:scale-105 active:scale-95 active:rotate-1.7"
+              className="rounded-xl xl:w-[180px] ms:w-[170px] md:w-[170px] cursor-pointer
+               bg-gray-300 bg-opacity-60 shadow-xl backdrop-blur-md text-center 
+               transition-all duration-500 hover:scale-105 active:scale-95 active:rotate-1.7"
               src={thumb.imgUrl}
               alt={thumb.title}
             />
