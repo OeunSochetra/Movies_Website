@@ -1,21 +1,21 @@
+import React from "react";
+
 interface CustomSearchProps {
   value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  term: string;
+  onChange: (term: string) => void;
   placeholder: string;
 }
 
-const CustomSearch = ({
-  value,
-  onChange,
-  term,
-  placeholder,
-}: CustomSearchProps) => {
+const CustomSearch = ({ value, onChange, placeholder }: CustomSearchProps) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    onChange(event.target.value);
+  };
+
   return (
     <div>
       <input
         value={value}
-        onChange={onChange}
+        onChange={handleInputChange}
         placeholder={placeholder}
         className="w-full text-white py-2 pl-8 pr-4 border border-red-300 rounded-lg focus:outline-none 
          focus:border-red-400"
