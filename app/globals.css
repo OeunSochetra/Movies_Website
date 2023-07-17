@@ -8,6 +8,10 @@
     padding: 0%;
 }
 
+.flex {
+  position: relative;
+}
+
 .shadow__btn {
   padding: 5px 15px;
   border: none;
@@ -32,6 +36,17 @@
               0 0 50px rgb(255, 0, 25),
               0 0 100px rgb(255, 0, 25);
 }
+
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
   
    

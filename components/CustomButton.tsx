@@ -8,7 +8,11 @@ interface CustomButtonProps {
 const CustomButton = ({ title, btnType }: CustomButtonProps) => {
   return (
     <div>
-      <button type={btnType} className="shadow__btn">
+      <button
+        type={btnType}
+        className="shadow__btn transition-all duration-500 hover:scale-105 active:scale-95 
+        active:rotate-1.7"
+      >
         {title}
       </button>
     </div>
