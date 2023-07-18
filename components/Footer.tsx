@@ -5,6 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
+    //this style is using for making footer standing below the login and signup page and will be never move up bsolute bottom-[45px]
     <div className=" bsolute bottom-[45px]">
       <Container>
         <footer className="px-10 py-10 flex flex-col md:flex-row items-center justify-center">

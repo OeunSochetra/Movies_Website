@@ -2,9 +2,14 @@
 import React from "react";
 import Link from "next/link";
 import CustomSearch from "./CustomSearch";
+
+//this import is import from the layout page and it's created in loyout page
+//and this one is using for filter search in navbar ##search!!
+
 import { useContext } from "react";
 import { Mycontext } from "@/app/layout";
 const Navbar = () => {
+  //##search!!
   const { searchTerm, handleSearchTermChange } = useContext(Mycontext);
 
   return (

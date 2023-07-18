@@ -3,9 +3,13 @@ import React, { useState } from "react";
 import { thumbs } from "@/constant";
 import Container from "./Container";
 import Pagination from "./Pagination";
-import CustomSearch from "./CustomSearch";
 import { useContext } from "react";
+
+//this import is import from the layout page and it's created in loyout page
+//and this one is using for filter search in navbar ##search!!
+
 import { Mycontext } from "@/app/layout";
+import { usePathname } from "next/navigation";
 
 interface Thumb {
   title: string;
@@ -13,7 +17,9 @@ interface Thumb {
 }
 
 const Mypage: React.FC = () => {
+  //##search
   const { filteredThumbs } = useContext(Mycontext);
+
   const thumbsPerPage = 18; // Numbers of thumbs to display per page
   const [currentPage, setCurrentPage] = useState(1);
   // const [searchTerm, setSearchTerm] = useState("");
@@ -21,6 +27,8 @@ const Mypage: React.FC = () => {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
+
+  const pathname = usePathname();
 
   // const filteredThumbs = thumbs.filter((thumb: Thumb) =>
   //   thumb.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -59,7 +67,12 @@ const Mypage: React.FC = () => {
               ))}
           </>
         ) : (
-          <p>NOT FOUND</p>
+          <div className="wfull flex items-center justify-center">
+            <div>
+              <img src="/page-not-found.png" alt="page not found" />
+              <p>Not Found</p>
+            </div>
+          </div>
         )}
       </div>
 
