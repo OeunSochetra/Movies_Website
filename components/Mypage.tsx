@@ -67,11 +67,15 @@ const Mypage: React.FC = () => {
               ))}
           </>
         ) : (
-          <div className="wfull flex items-center justify-center">
-            <div>
-              <img src="/page-not-found.png" alt="page not found" />
-              <p>Not Found</p>
-            </div>
+          <div className="flex flex-col items-center justify-center mt-6">
+            <img
+              className="max-w-[500px] mb-4"
+              src="/empty.svg"
+              alt="page not found"
+            />
+            <h1 className="text-center text-gray-500 font-[400px]">
+              Nothing Found
+            </h1>
           </div>
         )}
       </div>
