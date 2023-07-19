@@ -10,7 +10,6 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: "", password: "" });
-  const [generalError, setGeneralError] = useState("");
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget;
@@ -21,7 +20,6 @@ const Login = () => {
       setPassword(value);
       setErrors({ ...errors, password: "" });
     }
-    setGeneralError("");
   };
 
   const handleSubmit = (e: React.SyntheticEvent) => {
@@ -42,17 +40,11 @@ const Login = () => {
       !/\d/.test(password) ||
       !/[a-zA-Z]/.test(password)
     ) {
-      newErrors.password = "The password must be at least 8 characters..";
+      newErrors.password =
+        "Password must be at least 8 characters with letters";
     }
 
-    if (newErrors.email || newErrors.password) {
-      setErrors(newErrors);
-      setGeneralError("Please fill in all required fields.");
-    } else {
-      console.log("Login successful!");
-      setErrors({});
-      setGeneralError("");
-    }
+    setErrors(newErrors);
   };
 
   return (
@@ -79,7 +71,6 @@ const Login = () => {
             error={errors.password}
           />
         </div>
-        {generalError && <p className="text-red-500 pt-5">{generalError}</p>}
         <div className="pt-5">
           <CustomButton
             title={"Login"}

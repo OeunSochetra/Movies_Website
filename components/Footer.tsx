@@ -8,7 +8,7 @@ const Footer = () => {
     //this style is using for making footer standing below the login and signup page and will be never move up bsolute bottom-[45px]
     <div className=" bsolute bottom-[45px]">
       <Container>
-        <footer className="px-10 py-10 sm:text-[5px] md:text-[5px] lg:text-[20px] xl:text-[15px] flex flex-col md:flex-row items-center justify-center">
+        <footer className="px-10 py-10 sm:text-[7px] md:text-[15px] lg:text-[15px] xl:text-[15px] flex flex-col md:flex-row items-center justify-center">
           <div className="font-[400] flex flex-wrap text-white">
             <div className="flex items-center justify-center">
               <div className="felx flex-col">

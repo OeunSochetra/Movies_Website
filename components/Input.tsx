@@ -22,7 +22,7 @@ const Input = ({ name, type, placeholder, value, onChange, error }: Props) => {
           error ? "border-red-500" : "border-color: rgb(239 68 68)"
         } rounded-xl transition-all duration-300 focus:outline-none focus:shadow-red-800`}
       />
-      {error && <p className="text-red-500 text-sm ">{error}</p>}
+      {error && <p className="text-red-500 pt-1 pl-2 text-sm ">{error}</p>}
     </div>
   );
 };

@@ -15,6 +15,7 @@ const Pagination = ({
   const handlePageChange = (page: number) => {
     onPageChange(page);
   };
+  window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <Container>
