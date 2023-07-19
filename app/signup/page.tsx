@@ -1,5 +1,9 @@
+"use client";
+import { useState } from "react";
 import CustomButton from "@/components/CustomButton";
 import Input from "@/components/Input";
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const signup = () => {
   return (
