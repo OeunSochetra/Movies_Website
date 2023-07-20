@@ -4,6 +4,7 @@ import { thumbs } from "@/constant";
 import Container from "./Container";
 import Pagination from "./Pagination";
 import { useContext } from "react";
+import Link from "next/link";
 
 //this import is import from the layout page and it's created in loyout page
 //and this one is using for filter search in navbar ##search!!
@@ -44,42 +45,43 @@ const Mypage: React.FC = () => {
 
   return (
     <Container>
-      <div
-        className="pt-4 grid grid-cols-2 md:grid-cols-4 sm:grid-cols-4 xl:grid-cols-6 
+      <Link href={"/showcards"}>
+        <div
+          className="pt-4 grid grid-cols-2 md:grid-cols-4 sm:grid-cols-4 xl:grid-cols-6 
       xxl:grid-cols-6 text-[#fff] gap-4 md:gap-4 sm:gap-2 xl:gap-3"
-      >
-        {" "}
-        {filteredThumbs.length > 0 ? (
-          <>
-            {filteredThumbs
-              .slice(startIndex, endIndex)
-              .map((thumb: Thumb, index: number) => (
-                <div key={index} className="flex flex-col items-center">
-                  <img
-                    className="rounded-xl xl:w-[180px] ms:w-[170px] md:w-[170px] cursor-pointer
+        >
+          {" "}
+          {filteredThumbs.length > 0 ? (
+            <>
+              {filteredThumbs
+                .slice(startIndex, endIndex)
+                .map((thumb: Thumb, index: number) => (
+                  <div key={index} className="flex flex-col items-center">
+                    <img
+                      className="rounded-xl xl:w-[180px] ms:w-[170px] md:w-[170px] cursor-pointer
                  bg-gray-300 bg-opacity-60 shadow-xl backdrop-blur-md text-center 
                  transition-all duration-500 hover:scale-105 active:scale-95 active:rotate-1.7"
-                    src={thumb.imgUrl}
-                    alt={thumb.title}
-                  />
-                  <p className="text-center font-[200] pt-4">{thumb.title}</p>
-                </div>
-              ))}
-          </>
-        ) : (
-          <div className="flex flex-col items-center justify-center mt-6">
-            <img
-              className="max-w-[500px] mb-4"
-              src="/empty.svg"
-              alt="page not found"
-            />
-            <h1 className="text-center text-gray-500 font-[400px]">
-              Nothing Found
-            </h1>
-          </div>
-        )}
-      </div>
-
+                      src={thumb.imgUrl}
+                      alt={thumb.title}
+                    />
+                    <p className="text-center font-[200] pt-4">{thumb.title}</p>
+                  </div>
+                ))}
+            </>
+          ) : (
+            <div className="flex flex-col items-center justify-center mt-6">
+              <img
+                className="max-w-[500px] mb-4"
+                src="/empty.svg"
+                alt="page not found"
+              />
+              <h1 className="text-center text-gray-500 font-[400px]">
+                Nothing Found
+              </h1>
+            </div>
+          )}
+        </div>
+      </Link>
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}

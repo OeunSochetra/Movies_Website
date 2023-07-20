@@ -73,7 +73,8 @@ export default function RootLayout({
           {/* And this is the 2 we can in put in THML element {pathname !== "/login" && pathname !== "/signup" && <Navbar></Navbar>} */}
           {pathname !== "/login" &&
             pathname !== "/signup" &&
-            pathname !== "/resetpass" && <Navbar></Navbar>}
+            pathname !== "/resetpass" &&
+            pathname !== "/showcards" && <Navbar></Navbar>}
           <main>{children}</main>
           <Footer></Footer>
         </Mycontext.Provider>

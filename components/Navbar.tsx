@@ -13,7 +13,7 @@ const Navbar = () => {
   const { searchTerm, handleSearchTermChange } = useContext(Mycontext);
 
   return (
-    <nav className="pt-10 gap-10 flex items-center justify-center">
+    <nav className=" pt-10 gap-10 flex items-center justify-center">
       <div>
         <Link href="/" className="text-red-500">
           <img className="w-8" src="/logo.png" alt="logo" />
