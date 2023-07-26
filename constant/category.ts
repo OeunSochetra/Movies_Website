@@ -175,3 +175,4 @@ export const category = [
         thumb:"https://wrs.silkroad.la/s3/silkroad2/6184799?width=300",
     },
 ];
+
