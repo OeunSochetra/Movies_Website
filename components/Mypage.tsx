@@ -5,6 +5,7 @@ import Container from "./Container";
 import Pagination from "./Pagination";
 import { useContext } from "react";
 import Link from "next/link";
+import Sidebar from "./Sidebar";
 
 //this import is import from the layout page and it's created in loyout page
 //and this one is using for filter search in navbar ##search!!
@@ -45,7 +46,10 @@ const Mypage: React.FC = () => {
 
   return (
     <Container>
-      <Link href={"/showcards"}>
+      <div>
+        <Sidebar></Sidebar>
+      </div>
+      <Link href={"/videoid"}>
         <div
           className="pt-4 grid grid-cols-2 md:grid-cols-4 sm:grid-cols-4 xl:grid-cols-6 
       xxl:grid-cols-6 text-[#fff] gap-4 md:gap-4 sm:gap-2 xl:gap-3"

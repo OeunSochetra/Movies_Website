@@ -74,7 +74,7 @@ export default function RootLayout({
           {pathname !== "/login" &&
             pathname !== "/signup" &&
             pathname !== "/resetpass" &&
-            pathname !== "/showcards" && <Navbar></Navbar>}
+            pathname !== "/videoid" && <Navbar></Navbar>}
           <main>{children}</main>
           <Footer></Footer>
         </Mycontext.Provider>

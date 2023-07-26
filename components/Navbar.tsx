@@ -14,11 +14,11 @@ const Navbar = () => {
 
   return (
     <nav className=" pt-10 gap-10 flex items-center justify-center">
-      <div>
+      {/* <div>
         <Link href="/" className="text-red-500">
           <img className="w-8" src="/logo.png" alt="logo" />
         </Link>
-      </div>
+      </div> */}
       <div className="w-[400px]">
         <CustomSearch
           value={searchTerm}
