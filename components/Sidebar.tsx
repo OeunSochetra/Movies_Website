@@ -30,9 +30,11 @@ const Sidebar = () => {
                   <BsInboxes></BsInboxes>
                 </div>
               </Link>
-              <div className="pt-7 text-[20px] hover:text-red-500">
-                <BsFillBoxFill></BsFillBoxFill>
-              </div>
+              <Link href="/genres">
+                <div className="pt-7 text-[20px] hover:text-red-500">
+                  <BsFillBoxFill></BsFillBoxFill>
+                </div>
+              </Link>
               <div className="pt-7 text-[26px] hover:text-red-500">
                 <AiOutlineSearch></AiOutlineSearch>
               </div>
