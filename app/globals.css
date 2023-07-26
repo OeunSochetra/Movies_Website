@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 *{
-    background-color: #1a1b1e;
     margin: 0%;
     padding: 0%;
+}
+body{
+  background-color: #1a1b1e;
 }
 
 .flex {

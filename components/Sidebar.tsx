@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const Sidebar = () => {
   return (
-    <div className="absolute ">
-      <div className=" w-[80px] hidden ms:block lg:block h-[834px] fixed top-0 left-0   ">
+    <div className="absolute  ">
+      <div className=" w-[80px] bg-[#1a1b1e] hidden ms:block lg:block h-[834px] fixed top-0 left-0   ">
         <div className="flex justify-center items-center">
           <div className="text-white text-[25px] pt-5">
             <Link href="/">
@@ -25,9 +25,11 @@ const Sidebar = () => {
               <div className="pt-7 hover:text-red-500">
                 <TbMovie></TbMovie>
               </div>
-              <div className="pt-7 text-[20px] hover:text-red-500">
-                <BsInboxes></BsInboxes>
-              </div>
+              <Link href="/category">
+                <div className="pt-7 text-[20px] hover:text-red-500">
+                  <BsInboxes></BsInboxes>
+                </div>
+              </Link>
               <div className="pt-7 text-[20px] hover:text-red-500">
                 <BsFillBoxFill></BsFillBoxFill>
               </div>
