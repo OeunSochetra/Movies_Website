@@ -2,8 +2,8 @@
 import Sidebar from "./Sidebar";
 import { category } from "@/constant/category";
 import Container from "./Container";
-import { useState } from "react";
-import { HiArrowCircleRight } from "react-icons/hi";
+import CurrentTime from "./CurrentTime";
+import ViewAll from "./ViewAll";
 
 interface CategoryProps {
   id: string;
@@ -12,31 +12,12 @@ interface CategoryProps {
 }
 
 const CategoryDetail = () => {
-  const [showItems, setShowItems] = useState(false);
-
-  const handleShow = () => {
-    setShowItems(true);
-  };
-
-  const displayedItems = showItems
-    ? category
-    : category.filter((item) => item.id === "movie").slice(0, 6);
-
   return (
     <div>
       <Sidebar />
       <Container>
-        <div className="flex items-end justify-end">
-          <p className=" text-red-500 text-xl font-[400]">
-            {!showItems && (
-              <button onClick={handleShow} className="flex gap-3">
-                View all{" "}
-                <span className="text-xl pt-1">
-                  <HiArrowCircleRight></HiArrowCircleRight>
-                </span>
-              </button>
-            )}
-          </p>
+        <div>
+          <ViewAll title={"Movie"}></ViewAll>
         </div>
         <div
           className="pt-11 grid grid-cols-2 md:grid-cols-4 sm:grid-cols-4 xl:grid-cols-6 
@@ -60,7 +41,7 @@ const CategoryDetail = () => {
           })}
         </div>
 
-        <div
+        {/* <div
           className="pt-[100px] grid grid-cols-2 md:grid-cols-4 sm:grid-cols-4 xl:grid-cols-6 
                      xxl:grid-cols-6 text-[#fff] gap-4 md:gap-4 sm:gap-2 xl:gap-3"
         >
@@ -80,7 +61,7 @@ const CategoryDetail = () => {
               );
             }
           })}
-        </div>
+        </div> */}
       </Container>
     </div>
   );

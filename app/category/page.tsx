@@ -22,6 +22,7 @@ const category = () => {
           </p>
         </div>
       </div>
+
       <CategoryDetail></CategoryDetail>
     </div>
   );

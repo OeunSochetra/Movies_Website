@@ -18,7 +18,7 @@ interface Thumb {
   imgUrl: string;
 }
 
-const Mypage: React.FC = () => {
+const Mypage = () => {
   //##search
   const { filteredThumbs } = useContext(Mycontext);
 
