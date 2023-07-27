@@ -17,7 +17,7 @@ const CategoryDetail = () => {
       <Sidebar />
       <Container>
         <div>
-          <ViewAll title={"Movie"}></ViewAll>
+          <ViewAll title={"Movies"} text={""}></ViewAll>
         </div>
         <div
           className="pt-11 grid grid-cols-2 md:grid-cols-4 sm:grid-cols-4 xl:grid-cols-6 

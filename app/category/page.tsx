@@ -8,7 +8,7 @@ const category = () => {
         <img
           src="/cover.jpg"
           alt="cover"
-          className="w-[550px] h-[150px] sm:w-auto sm:h-auto sm:max-w-full sm:max-h-full opacity-20  "
+          className="w-[550px] h-[150px] sm:w-auto sm:h-auto sm:max-w-full sm:max-h-full opacity-20"
         />
 
         <div

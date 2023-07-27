@@ -12,6 +12,8 @@ import "./globals.css";
 //component tree without explicitly passing props
 import { createContext, useState } from "react";
 import { thumbs } from "@/constant";
+import Header from "@/components/Header";
+import SidebarMobile from "@/components/SidebarMobile";
 
 // export const metadata = {
 //   title: "Slik Road media",
@@ -60,6 +62,7 @@ export default function RootLayout({
       <body>
         {/* Mycontext.Provider is from the export const Mycontext line 28 that we has created and 
         we need too repe all the element componets below the body  */}
+        <Header></Header>
         <Mycontext.Provider
           value={{
             searchTerm,
@@ -78,7 +81,10 @@ export default function RootLayout({
             pathname !== "/category" &&
             pathname !== "/genres" && <Navbar></Navbar>}
           <main>{children}</main>
+
           <Footer></Footer>
+
+          <SidebarMobile></SidebarMobile>
         </Mycontext.Provider>
         {/* {hideNavbar()}
         
