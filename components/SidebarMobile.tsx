@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const SidebarMobile = () => {
   return (
-    <div className="sticky left-0 right-0 bottom-0  bg-[#151517] h-11 box-shadow: -34px -65px 100px 49px #000">
-      <div className="flex items-center justify-center text-center shadow-2xl gap-5 text-white font-[200] md:hidden">
+    <div className="sticky left-0 right-0 bottom-0  bg-[#151517] block lg:hidden xl:hidden 2xl:hidden ">
+      <div className="flex items-center justify-center text-center gap-5 text-white font-[200]  ">
         <div className="text-[23px] flex flex-col items-center ">
           <div>
             <AiOutlineHome></AiOutlineHome>
@@ -38,7 +38,6 @@ const SidebarMobile = () => {
           <p className="text-sm">Search</p>
         </div>
       </div>
-      {/* <div className=""></div> */}
     </div>
   );
 };
