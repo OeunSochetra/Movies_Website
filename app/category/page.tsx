@@ -1,5 +1,8 @@
+"use client";
+import { useState } from "react";
 import CategoryDetail from "@/components/CategoryDetail";
 import Container from "@/components/Container";
+import ViewAll from "@/components/ViewAll";
 
 const category = () => {
   return (

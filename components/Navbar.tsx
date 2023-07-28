@@ -29,7 +29,7 @@ const Navbar = () => {
           </div>
         </div>
         <nav className=" pt-10 gap-10 flex items-center justify-center">
-          <div className="w-[400px] ">
+          <div className="w-[400px]  ">
             <CustomSearch
               value={searchTerm}
               onChange={handleSearchTermChange}

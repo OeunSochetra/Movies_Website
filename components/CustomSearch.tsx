@@ -17,7 +17,7 @@ const CustomSearch = ({ value, onChange, placeholder }: CustomSearchProps) => {
         value={value}
         onChange={handleInputChange}
         placeholder={placeholder}
-        className="w-full text-white py-2 pl-8 pr-4 border border-red-300 rounded-lg focus:outline-none 
+        className="w-full text-black py-2 pl-8 pr-4 border border-red-300 rounded-lg focus:outline-none 
          focus:border-red-400"
       />
     </div>
