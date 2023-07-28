@@ -17,20 +17,26 @@ const Navbar = () => {
   return (
     <div className="relative">
       <Container>
+        <div className="block md:hidden lg:hidden xl:hidden 2xl:hidden ">
+          <div className="flex gap-2 justify-end text-red-500 pt-5">
+            <Link href="/login">
+              <span>Login</span>
+            </Link>
+            <span className="">|</span>
+            <Link href="/signup">
+              <span>Sign Up</span>
+            </Link>
+          </div>
+        </div>
         <nav className=" pt-10 gap-10 flex items-center justify-center">
-          {/* <div>
-        <Link href="/" className="text-red-500">
-          <img className="w-8" src="/logo.png" alt="logo" />
-        </Link>
-      </div> */}
-          <div className="w-[400px]">
+          <div className="w-[400px] ">
             <CustomSearch
               value={searchTerm}
               onChange={handleSearchTermChange}
               placeholder={`Looking for Movies or TV Shows`}
             />
           </div>
-          <div>
+          <div className="hidden sm:block md:block">
             <p className="flex gap-2 text-red-500">
               <Link href="/login">
                 <span>Login</span>

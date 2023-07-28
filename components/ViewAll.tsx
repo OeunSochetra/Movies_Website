@@ -1,4 +1,3 @@
-import { title } from "process";
 import { HiArrowCircleRight } from "react-icons/hi";
 import Container from "./Container";
 
