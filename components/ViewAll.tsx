@@ -10,22 +10,19 @@ interface viewallProps {
 const ViewAll = ({ title, text, onlick }: viewallProps) => {
   return (
     <Container>
-      <div className="pt-10 flex justify-between pl-0 sm:pl-0 md:pl-0 lg:pl-10 xl:pl-10 2xl:pl-0  ">
-        <div className=" text-white ">
-          {title}
-          <p className=" text-white font-[100] text-lg">{text}</p>
+      <div className="text-white flex items-center justify-between pt-5 pl-0 sm:pl-0 md:pl-0 lg:pl-10 xl:pl-10 2xl:pl-0">
+        <div className="text-white flex flex-col">
+          <h1 className="text-[18px] md:text-[30px] font-[700]">{title}</h1>
+          <p className="text-[12px] md:text-[15px] font-[200]">{text}</p>
         </div>
-        <p className=" text-red-500 font-[400]">
-          <button
-            onClick={onlick}
-            className="flex p-1 gap-3 text-[10px] md:text-[25px] hover:text-white"
-          >
-            View all
-            <span className="text-xl pt-1">
+        <div className="text-[400] text-red-500 text-[16px] md:text-[20px]">
+          <button className="flex gap-2" onClick={onlick}>
+            <span>View all</span>
+            <div className="pt-1">
               <HiArrowCircleRight></HiArrowCircleRight>
-            </span>
+            </div>
           </button>
-        </p>
+        </div>
       </div>
     </Container>
   );

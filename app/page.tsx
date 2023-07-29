@@ -7,12 +7,6 @@ const Page = () => {
     <section>
       <div className="flex items-center justify-center">
         <div className="pt-10 max-w-[1180px] w-full">
-          <Container>
-            <ViewAll
-              title={"Movies 🎉"}
-              text={"Enjoy our latest daily and weekly upload"}
-            ></ViewAll>
-          </Container>
           <Mypage></Mypage>
         </div>
       </div>
