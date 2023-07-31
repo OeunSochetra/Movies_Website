@@ -48,9 +48,6 @@ const Mypage = () => {
   return (
     <Container>
       <div>
-        <Sidebar></Sidebar>
-      </div>
-      <div>
         <Hero
           title={"Latest Release 🎉"}
           text={"Enjoy our latest daily and weekly upload"}

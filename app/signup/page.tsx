@@ -2,8 +2,15 @@
 import { useState } from "react";
 import CustomButton from "@/components/CustomButton";
 import Input from "@/components/Input";
+import { formToJSON } from "axios";
 
-const resetpass = () => {
+interface FormData {
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
+const resetpass = ({}: FormData) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -12,6 +19,11 @@ const resetpass = () => {
     password: "",
     confirmPassword: "",
   });
+  // const [formData, setDate] = useState({
+  //   email: "",
+  //   password: "",
+  //   confirmPassword: "",
+  // });
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget;
@@ -30,6 +42,14 @@ const resetpass = () => {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
+    const formData: FormData = {
+      email,
+      password,
+      confirmPassword,
+    };
+
+    console.log("Form Data", formData);
+
     const newErrors = { email: "", password: "", confirmPassword: "" };
 
     if (!email) {
@@ -42,11 +62,10 @@ const resetpass = () => {
       newErrors.password = "Please enter your password.";
     } else if (
       password.length < 8 ||
-      !/\d/.test(password) ||
-      !/[a-zA-Z]/.test(password)
+      !/\d/.test(password)
+      // !/[a-zA-Z]/.test(password)
     ) {
-      newErrors.password =
-        "Password must be at least 8 characters with letters.";
+      newErrors.password = "Password must be at least 8 characters.";
     }
 
     if (!confirmPassword) {

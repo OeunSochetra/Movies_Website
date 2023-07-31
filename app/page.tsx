@@ -1,6 +1,8 @@
 import ViewAll from "@/components/ViewAll";
 import Mypage from "@/components/Mypage";
 import Container from "@/components/Container";
+import SlideBanner from "@/components/SlideBanner";
+import Sidebar from "@/components/Sidebar";
 
 const Page = () => {
   return (

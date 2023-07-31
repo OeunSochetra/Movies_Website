@@ -17,6 +17,7 @@ const Navbar = () => {
   return (
     <div className="relative">
       <Container>
+        {/* ********** */}
         <div className="block md:hidden lg:hidden xl:hidden 2xl:hidden ">
           <div className="flex gap-2 justify-end text-red-500 pt-5">
             <Link href="/login">
@@ -28,7 +29,9 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        <nav className=" pt-10 gap-10 flex items-center justify-center">
+        {/* ********** */}
+        <nav className=" pt-10 gap-10 flex itmes-end justify-between">
+          <div className="bg-[#1a1b1e]"></div>
           <div className="w-[400px]  ">
             <CustomSearch
               value={searchTerm}
@@ -36,7 +39,7 @@ const Navbar = () => {
               placeholder={`Looking for Movies or TV Shows`}
             />
           </div>
-          <div className="hidden sm:block md:block">
+          <div className="pt-3 hidden  sm:block md:block">
             <p className="flex gap-2 text-red-500">
               <Link href="/login">
                 <span>Login</span>

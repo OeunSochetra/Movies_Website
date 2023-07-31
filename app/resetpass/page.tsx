@@ -3,6 +3,10 @@ import { useState } from "react";
 import CustomButton from "@/components/CustomButton";
 import Input from "@/components/Input";
 
+interface FormData {
+  email: string;
+}
+
 const resetpass = () => {
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({ email: "" });
@@ -17,6 +21,11 @@ const resetpass = () => {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
+
+    const formData: FormData = {
+      email,
+    };
+    console.log("From Data", formData);
 
     const newErrors = { email: "" };
     if (!email) {

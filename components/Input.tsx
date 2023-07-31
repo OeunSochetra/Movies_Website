@@ -19,7 +19,7 @@ const Input = ({ name, type, placeholder, value, onChange, error }: Props) => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full md:w-full">
       <div className="relative">
         <input
           name={name}
@@ -27,7 +27,7 @@ const Input = ({ name, type, placeholder, value, onChange, error }: Props) => {
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          className={`input__form w-full text-[#fff] bg-[#1a1b1e] py-[5px] px-[15px] font-[16px] shadow border ${
+          className={`input__form w-[300px] md:w-[400px]  text-[#fff] bg-[#1a1b1e] py-[5px] px-[10px] lg:py-[5px] lg:px-[15px]  font-[16px] shadow border ${
             error ? "border-red-500" : "border-color: rgb(239 68 68)"
           } rounded-xl transition-all duration-300 focus:outline-none focus:shadow-red-800`}
         />
@@ -35,7 +35,7 @@ const Input = ({ name, type, placeholder, value, onChange, error }: Props) => {
           <button
             type="button"
             onClick={handleTogglePassword}
-            className="absolute top-1/2 right-2 transform -translate-y-1/2 text-gray-400 focus:outline-none"
+            className="absolute top-1/2 right-5 transform -translate-y-1/2 text-gray-400 focus:outline-none"
           >
             {showPassword ? <FaEyeSlash /> : <FaEye />}
           </button>

@@ -18,26 +18,33 @@ const Sidebar = () => {
                 height={35}
               />
             </Link>
+
             <div className="pt-7 cursor-pointer">
-              <Link href="/" className="hover:text-red-500 ">
-                <AiOutlineHome></AiOutlineHome>
+              <Link href="/">
+                <div className="hover:text-red-500 ">
+                  <AiOutlineHome></AiOutlineHome>
+                </div>
               </Link>
-              <div className="pt-7 hover:text-red-500">
-                <TbMovie></TbMovie>
-              </div>
-              <Link href="/category">
+              <Link href="/subtitle">
+                <div className="pt-7 hover:text-red-500">
+                  <TbMovie></TbMovie>
+                </div>
+              </Link>
+              <Link href="/categcary">
                 <div className="pt-7 text-[20px] hover:text-red-500">
                   <BsInboxes></BsInboxes>
                 </div>
               </Link>
-              <Link href="/genres">
+              <Link href="">
                 <div className="pt-7 text-[20px] hover:text-red-500">
                   <BsFillBoxFill></BsFillBoxFill>
                 </div>
               </Link>
-              <div className="pt-7 text-[26px] hover:text-red-500">
-                <AiOutlineSearch></AiOutlineSearch>
-              </div>
+              <Link href="">
+                <div className="pt-7 text-[26px] hover:text-red-500">
+                  <AiOutlineSearch></AiOutlineSearch>
+                </div>
+              </Link>
             </div>
           </div>
         </div>

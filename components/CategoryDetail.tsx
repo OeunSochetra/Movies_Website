@@ -35,7 +35,6 @@ const CategoryDetail = () => {
 
   return (
     <div>
-      <Sidebar />
       <Container>
         <div>
           <ViewAll title={"Movies"} text={""} onlick={handleShowAll}></ViewAll>

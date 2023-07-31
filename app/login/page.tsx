@@ -6,6 +6,11 @@ import Link from "next/link";
 
 // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+interface FormData {
+  email: string;
+  password: string;
+}
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,6 +30,13 @@ const Login = () => {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
+    const formData: FormData = {
+      email,
+      password,
+    };
+
+    console.log("Form Data", formData);
+
     const newErrors = { email: "", password: "" };
 
     if (!email) {
@@ -40,8 +52,7 @@ const Login = () => {
       !/\d/.test(password) ||
       !/[a-zA-Z]/.test(password)
     ) {
-      newErrors.password =
-        "Password must be at least 8 characters with letters";
+      newErrors.password = "Password must be at least 8 characters";
     }
 
     setErrors(newErrors);

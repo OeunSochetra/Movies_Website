@@ -14,6 +14,7 @@ import { createContext, useState } from "react";
 import { thumbs } from "@/constant";
 import Header from "@/components/Header";
 import SidebarMobile from "@/components/SidebarMobile";
+import Sidebar from "@/components/Sidebar";
 
 // export const metadata = {
 //   title: "Slik Road media",
@@ -78,12 +79,12 @@ export default function RootLayout({
             pathname !== "/signup" &&
             pathname !== "/resetpass" &&
             pathname !== "/videoid" &&
-            pathname !== "/category" &&
-            pathname !== "/genres" && <Navbar></Navbar>}
+            pathname !== "/subtitle" &&
+            pathname !== "/categcary" && <Navbar></Navbar>}
           <main>{children}</main>
 
           <Footer></Footer>
-
+          <Sidebar></Sidebar>
           <SidebarMobile></SidebarMobile>
         </Mycontext.Provider>
         {/* {hideNavbar()}
