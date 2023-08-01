@@ -55,8 +55,8 @@ const Mypage = () => {
       </div>
       <Link href={"/videoid"}>
         <div
-          className="pt-10 grid grid-cols-2 md:grid-cols-4 sm:grid-cols-4 xl:grid-cols-6 
-      xxl:grid-cols-6 text-[#fff] gap-4 md:gap-4 sm:gap-2 xl:gap-3 pl-0 sm:pl-0 md:pl-0 lg:pl-10 xl:pl-10 2xl:pl-0"
+          className="pt-5 grid grid-cols-2 md:grid-cols-4 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 
+          2xl:grid-cols-6 text-[#fff] gap-4 md:gap-4 sm:gap-2 xl:gap-3 pl-0 sm:pl-0 md:pl-0 lg:pl-[60px] xl:pl-10 2xl:pl-0"
         >
           {" "}
           {filteredThumbs.length > 0 ? (

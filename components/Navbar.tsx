@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import CustomSearch from "./CustomSearch";
 import Container from "./Container";
+import CurrentTime from "./CurrentTime";
 
 //this import is import from the layout page and it's created in loyout page
 //and this one is using for filter search in navbar ##search!!
@@ -30,8 +31,10 @@ const Navbar = () => {
           </div>
         </div>
         {/* ********** */}
-        <nav className=" pt-10 gap-10 flex itmes-end justify-between">
-          <div className="bg-[#1a1b1e]"></div>
+        <nav className=" pt-10 gap-10 flex itmes-end justify-between pl-0 sm:pl-0 md:pl-0 lg:pl-[70px] xl:pl-10 2xl:pl-0">
+          <div>
+            <CurrentTime></CurrentTime>
+          </div>
           <div className="w-[400px]  ">
             <CustomSearch
               value={searchTerm}
