@@ -6,12 +6,14 @@ const Loading = () => {
 
   const handleClick = () => {
     setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 900);
   };
 
   return (
-    <div className="pt-[300px]">
+    <div className="bg-white text-white">
       <div onClick={handleClick}>
-        <img src="/logo.png" alt="logo" />
         {isLoading && <div className="loading"></div>}
       </div>
     </div>

@@ -2,79 +2,84 @@
 import { useState } from "react";
 import CustomButton from "@/components/CustomButton";
 import Input from "@/components/Input";
-import { formToJSON } from "axios";
 
 interface FormData {
   email: string;
   password: string;
   confirmPassword: string;
 }
+interface FormError {
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
 
-const resetpass = ({}: FormData) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [errors, setErrors] = useState({
+const resetpass = () => {
+  const [formData, setDate] = useState<FormData>({
     email: "",
     password: "",
     confirmPassword: "",
   });
-  // const [formData, setDate] = useState({
-  //   email: "",
-  //   password: "",
-  //   confirmPassword: "",
-  // });
+  const [error, setErrors] = useState<FormError>({
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget;
-    if (name === "email") {
-      setEmail(value);
-      setErrors({ ...errors, email: "" });
-    } else if (name === "password") {
-      setPassword(value);
-      setErrors({ ...errors, password: "" });
-    } else if (name === "confirmPassword") {
-      setConfirmPassword(value);
-      setErrors({ ...errors, confirmPassword: "" });
-    }
+    setDate({ ...formData, [name]: value });
+    setErrors({ ...error, [name]: undefined });
   };
+
+  // const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+  //   const { name, value } = e.currentTarget;
+  //   if (name === "email") {
+  //     setEmail(value);
+  //     setErrors({ ...errors, email: "" });
+  //   } else if (name === "password") {
+  //     setPassword(value);
+  //     setErrors({ ...errors, password: "" });
+  //   } else if (name === "confirmPassword") {
+  //     setConfirmPassword(value);
+  //     setErrors({ ...errors, confirmPassword: "" });
+  //   }
+  //};
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    const formData: FormData = {
-      email,
-      password,
-      confirmPassword,
+    const validationErrors: FormError = {
+      email: "",
+      password: "",
+      confirmPassword: "",
     };
 
     console.log("Form Data", formData);
 
-    const newErrors = { email: "", password: "", confirmPassword: "" };
-
-    if (!email) {
-      newErrors.email = "Please enter your email.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Please enter a valid email address.";
+    if (validationErrors.email) {
+      formData.email = "Please enter your email.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      validationErrors.email = "Please enter a valid email address.";
     }
 
-    if (!password) {
-      newErrors.password = "Please enter your password.";
+    if (!formData.password) {
+      validationErrors.password = "Please enter your password.";
     } else if (
-      password.length < 8 ||
-      !/\d/.test(password)
+      formData.password.length < 8 ||
+      !/\d/.test(formData.password)
       // !/[a-zA-Z]/.test(password)
     ) {
-      newErrors.password = "Password must be at least 8 characters.";
+      validationErrors.password = "Password must be at least 8 characters.";
     }
 
-    if (!confirmPassword) {
-      newErrors.confirmPassword = "Please confirm your password.";
-    } else if (password !== confirmPassword) {
-      newErrors.confirmPassword = "Passwords do not match.";
+    if (!formData.confirmPassword) {
+      validationErrors.confirmPassword = "Please confirm your password.";
+    } else if (formData.password !== formData.confirmPassword) {
+      validationErrors.confirmPassword = "Passwords do not match.";
     }
 
-    setErrors(newErrors);
+    setErrors(validationErrors);
   };
 
   return (
@@ -88,25 +93,25 @@ const resetpass = ({}: FormData) => {
             name="email"
             type="text"
             placeholder="Email Address"
-            value={email}
+            value={formData.email}
             onChange={handleChange}
-            error={errors.email}
+            error={error.email}
           />
           <Input
             name="password"
             type="password"
             placeholder="Password"
-            value={password}
+            value={formData.password}
             onChange={handleChange}
-            error={errors.password}
+            error={error.password}
           />
           <Input
             name="confirmPassword"
             type="password"
             placeholder="Confirm Password"
-            value={confirmPassword}
+            value={formData.confirmPassword}
             onChange={handleChange}
-            error={errors.confirmPassword}
+            error={error.confirmPassword}
           />
         </div>
         <div className="pt-10">

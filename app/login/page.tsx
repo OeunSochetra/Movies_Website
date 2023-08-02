@@ -10,52 +10,72 @@ interface FormData {
   email: string;
   password: string;
 }
+interface FormError {
+  email: string;
+  password: string;
+}
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({ email: "", password: "" });
+  const [formData, setData] = useState<FormData>({
+    email: "",
+    password: "",
+  });
+  const [error, setErrors] = useState<FormError>({
+    email: "",
+    password: "",
+  });
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget;
-    if (name === "email") {
-      setEmail(value);
-      setErrors({ ...errors, email: "" });
-    } else if (name === "password") {
-      setPassword(value);
-      setErrors({ ...errors, password: "" });
-    }
+    setData({ ...formData, [name]: value });
+    setErrors({ ...error, [name]: undefined });
   };
+
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [errors, setErrors] = useState({ email: "", password: "" });
+
+  // const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+  //   const { name, value } = e.currentTarget;
+  //   if (name === "email") {
+  //     setEmail(value);
+  //     setErrors({ ...errors, email: "" });
+  //   } else if (name === "password") {
+  //     setPassword(value);
+  //     setErrors({ ...errors, password: "" });
+  //   }
+  // };
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    const formData: FormData = {
-      email,
-      password,
+    const validationErrors: FormError = {
+      email: "",
+      password: "",
     };
 
     console.log("Form Data", formData);
 
-    const newErrors = { email: "", password: "" };
-
-    if (!email) {
-      newErrors.email = "Please enter your email.";
-    } else if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Please enter a valid email address.";
-    }
-
-    if (!password) {
-      newErrors.password = "Please enter your password.";
+    if (!formData.email) {
+      validationErrors.email = "Please enter your email.";
     } else if (
-      password.length < 8 ||
-      !/\d/.test(password) ||
-      !/[a-zA-Z]/.test(password)
+      !formData.email ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
     ) {
-      newErrors.password = "Password must be at least 8 characters";
+      validationErrors.email = "Please enter a valid email address.";
     }
 
-    setErrors(newErrors);
+    if (!formData.password) {
+      validationErrors.password = "Please enter your password.";
+    } else if (
+      formData.password.length < 8 ||
+      !/\d/.test(formData.password) ||
+      !/[a-zA-Z]/.test(formData.password)
+    ) {
+      validationErrors.password = "Password must be at least 8 characters";
+    }
+
+    setErrors(validationErrors);
   };
 
   return (
@@ -69,17 +89,17 @@ const Login = () => {
             name="email"
             type="text"
             placeholder="Email Address"
-            value={email}
+            value={formData.email}
             onChange={handleChange}
-            error={errors.email}
+            error={error.email}
           />
           <Input
             name="password"
             type="password"
             placeholder="Password"
-            value={password}
+            value={formData.password}
             onChange={handleChange}
-            error={errors.password}
+            error={error.password}
           />
         </div>
         <div className="pt-5">

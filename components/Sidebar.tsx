@@ -1,3 +1,4 @@
+"use client";
 import { AiOutlineHome, AiOutlineSearch } from "react-icons/ai";
 import { TbMovie } from "react-icons/tb";
 import { BsFillBoxFill, BsInboxes } from "react-icons/bs";

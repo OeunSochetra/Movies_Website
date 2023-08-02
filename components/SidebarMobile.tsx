@@ -16,7 +16,7 @@ const SidebarMobile = () => {
           <p className="text-[10px] sm:text-[23px]">Home</p>
         </div>
         <div className=" flex flex-col items-center ">
-          <Link href="/">
+          <Link href="/subtitle">
             <div>
               <TbMovie></TbMovie>
             </div>
@@ -25,7 +25,7 @@ const SidebarMobile = () => {
         </div>
 
         <div className="flex flex-col items-center ">
-          <Link href="/">
+          <Link href="/categcary">
             <div className="text-[15px] sm:text-[20px]">
               <BsInboxes></BsInboxes>
             </div>
