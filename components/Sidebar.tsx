@@ -1,7 +1,7 @@
 "use client";
 import { AiOutlineHome, AiOutlineSearch } from "react-icons/ai";
 import { TbMovie } from "react-icons/tb";
-import { BsFillBoxFill, BsInboxes } from "react-icons/bs";
+import { BsFillBoxFill, BsInboxes, BsJournalBookmark } from "react-icons/bs";
 import Link from "next/link";
 
 const Sidebar = () => {
@@ -44,6 +44,11 @@ const Sidebar = () => {
               <Link href="">
                 <div className="pt-7 text-[26px] hover:text-red-500">
                   <AiOutlineSearch></AiOutlineSearch>
+                </div>
+              </Link>
+              <Link href="/react30day">
+                <div className="pt-7 text-[20px] hover:text-red-500">
+                  <BsJournalBookmark></BsJournalBookmark>
                 </div>
               </Link>
             </div>

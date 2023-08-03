@@ -63,10 +63,11 @@ export default function RootLayout({
             pathname !== "/videoid" &&
             pathname !== "/subtitle" &&
             pathname !== "/categcary" &&
-            pathname !== "/drama" && <Navbar></Navbar>}
+            pathname !== "/drama" &&
+            pathname !== "/react30day" && <Navbar></Navbar>}
           <main>{children}</main>
-
           <Footer></Footer>
+
           <Sidebar></Sidebar>
           <SidebarMobile></SidebarMobile>
         </Mycontext.Provider>

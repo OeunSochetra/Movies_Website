@@ -1,6 +1,6 @@
 import { AiOutlineHome, AiOutlineSearch } from "react-icons/ai";
 import { TbMovie } from "react-icons/tb";
-import { BsFillBoxFill, BsInboxes } from "react-icons/bs";
+import { BsFillBoxFill, BsInboxes, BsJournalBookmark } from "react-icons/bs";
 import Link from "next/link";
 
 const SidebarMobile = () => {
@@ -47,6 +47,14 @@ const SidebarMobile = () => {
             </div>
           </Link>
           <p className="text-[10px] md:text-[25px]">Search</p>
+        </div>
+        <div className=" flex flex-col items-center ">
+          <Link href="/">
+            <div>
+              <BsJournalBookmark></BsJournalBookmark>
+            </div>
+          </Link>
+          <p className="text-[10px] md:text-[25px]">Book</p>
         </div>
       </div>
     </div>
