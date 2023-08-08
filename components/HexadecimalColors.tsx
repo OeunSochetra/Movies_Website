@@ -5,7 +5,7 @@ const HexadecimalColors = () => {
   return (
     <Container>
       <div className="pt-20 ">
-        <div className="flex items-center justify-center text-3xl font-[700]">
+        <div className="flex items-center justify-center text-white text-3xl font-[700]">
           <h1>Hexadecimal Colors</h1>
         </div>
         <div
